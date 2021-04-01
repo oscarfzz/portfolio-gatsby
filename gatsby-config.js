@@ -6,6 +6,10 @@
  *
  */
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.
@@ -26,9 +30,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        url: process.env.WP_GRAPH_API_URL,
       },
     },
 
@@ -45,6 +47,13 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
 
     /**
      * The following two plugins are required if you want to use Gatsby image
@@ -58,7 +67,7 @@ module.exports = {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter WordPress Blog`,
+        name: `Oscar Fernandez Portfolio`,
         short_name: `GatsbyJS & WP`,
         start_url: `/`,
         background_color: `#ffffff`,
