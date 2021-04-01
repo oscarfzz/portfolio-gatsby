@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const LandingStyle = styled.section.attrs(() => ({
   className: "wm",
 }))`
-  min-height: calc(80vh - 100px);
-  padding: 10rem;
+  min-height: calc(100vh - 100px);
+  padding: 3rem 7rem;
   position: unset !important;
 
   @media (max-width: 980px) {
@@ -16,7 +16,7 @@ export const LandingStyle = styled.section.attrs(() => ({
   }
 
   &.wm {
-    min-height: calc(80vh - 100px);
+    min-height: calc(100vh - 100px);
     .flat-button {
       color: #08fdd8;
       font-size: 14px;
