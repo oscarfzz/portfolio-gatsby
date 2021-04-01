@@ -158,6 +158,130 @@ html {
     }
   }
 
+  /* SiderBar with social and contact */
+.orientation-div {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+  color: #f05365;
+
+  
+}
+@media (max-width: 1080px) {
+  .orientation-div {
+    left: 20px;
+    right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .orientation-div {
+    display: none;
+  }
+}
+.orientation-svg {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.orientation-svg::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: #f05365;
+}
+.orientation-svg li:last-of-type {
+  margin-bottom: 20px;
+}
+.orientation-svg li a {
+  padding: 10px;
+}
+.orientation-svg li a:hover,
+.orientation-svg li a:focus {
+  transform: translateY(-3px);
+}
+.orientation-svg li a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.email__location {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  right: 40px;
+  z-index: 10;
+  color: #f05365;
+}
+@media (max-width: 1080px) {
+  .email__location {
+    left: auto;
+    right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .email__location {
+    display: none;
+  }
+}
+.email__Styled {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+.email__Styled::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: #f05365;
+}
+.email__Styled a {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+}
+.email__Styled a:hover,
+.email__Styled a:focus {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
   
 `
 export default GlobalStyle

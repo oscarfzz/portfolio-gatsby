@@ -6,6 +6,7 @@ import * as THREE from "three"
 import Title from "../components/title"
 
 import { LandingStyle } from "../styles/LandingStyle"
+import Lateral from "../components/lateral"
 
 const Landing = () => {
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -70,6 +71,7 @@ const Landing = () => {
           {/* </Fade> */}
         </div>
       </LandingStyle>
+      <Lateral />
     </>
   )
 }
