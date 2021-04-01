@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
   --primary-color: #1d1d1d;
   --white: #e6f1ff;
   --textLink: #08fdd8;
+  --fz-heading: 5.1rem;
+  --fz-lg: 2.5rem;
 }
 
 *,
@@ -57,6 +59,105 @@ html {
     color: var(--textLink);
     text-decoration: none;
   }
+
+  h1 .rubberBand:hover,
+  h2 .rubberBand:hover,
+  h3 .rubberBand:hover,
+  h4 .rubberBand:hover {
+    animation-name: rubberBand;
+    color: #08fdd8;
+  }
+
+  .wm h1 {
+    color: #fff;
+    margin: 0;
+    font-weight: 400;
+    font-size: var(--fz-heading);
+    line-height: 8.7rem;
+    position: relative;
+  }
+
+  span.rubberBand {
+    display: inline-block;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+  }
+
+  span.rubberBand.animated {
+    -webkit-animation-name: rubberBand;
+    animation-duration: 1s;
+    animation-name: rubberBand;
+  }
+
+  @keyframes rubberBand {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .line {
+    font-size: var(--fz-lg);
+    width: 100%;
+  }
+
+  @media (max-width: 760px) {
+    .line {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (min-width: 530px) {
+    .line {
+      animation: typewriter 3s steps(36), cursor 650ms steps(36) infinite;
+      font-size: var(--fz-lg);
+      border-right: solid 2px #f05365;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 32ch;
+    }
+  }
+
+  /* typewriter animation */
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 32ch;
+    }
+  }
+  /* cursor animation */
+  @keyframes cursor {
+    100% {
+      border-right-color: transparent;
+    }
+  }
+
   
 `
 export default GlobalStyle

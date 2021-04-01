@@ -44,7 +44,7 @@ const Title = props => {
 
   return (
     <>
-      <props.TitleType aria-label="Hi, I'm Óscar Fernández">
+      <props.TitleType aria-label={props.name} className={props.className}>
         {CreateTitle()}
       </props.TitleType>
     </>
@@ -57,4 +57,5 @@ Title.propTypes = {
   title: PropTypes.string,
   addBR: PropTypes.any,
   TitleType: PropTypes.any,
+  className: PropTypes.string,
 }

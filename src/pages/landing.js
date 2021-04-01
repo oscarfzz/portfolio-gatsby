@@ -50,10 +50,15 @@ const Landing = () => {
       <Helmet>
         <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
       </Helmet>
-      <LandingStyle ref={myRef} className="wm">
+      <LandingStyle ref={myRef}>
         <div>
           {/* <Fade show={show}> */}
-          <Title name={"Hi, I’m Oscar Fernandez"} addBR={3} TitleType={"h1"} />
+          <Title
+            name={"Hi, I’m Oscar Fernandez"}
+            addBR={3}
+            TitleType={"h1"}
+            className="holi"
+          />
           <p className="line">Full Stack Developer & Technical SEO</p>{" "}
           <a rel="contact" href="/contact/" className="flat-button">
             <div>
