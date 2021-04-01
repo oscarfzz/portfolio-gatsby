@@ -4,12 +4,14 @@ import styled from "@emotion/styled"
 import Navbar from "./Navbar/Navbar"
 import GlobalStyle from "../styles/GlobalStyle"
 
+import Landing from "../pages/landing"
+
 const Layout = ({ isHomePage }) => {
   return (
     <>
       <GlobalStyle />
       <Navbar />
-      {isHomePage ? <div>holi</div> : null}
+      {isHomePage ? <Landing /> : null}
     </>
   )
 }
