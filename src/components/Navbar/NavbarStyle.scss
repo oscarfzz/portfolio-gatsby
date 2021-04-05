@@ -1,0 +1,210 @@
+@import "../../styles/GlobalStyle.scss";
+
+nav {
+  height: 10vh;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 0 3vw;
+  align-self: center;
+  max-width: 1400px;
+
+  @media (max-width: 768px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--primary-color);
+  }
+}
+
+.Toggle {
+  display: none;
+  height: 100%;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.Menu__Mobile {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.Hamburger {
+  background-color: var(--white);
+  width: 30px;
+  display: block;
+  height: 2px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: "inherit";
+}
+
+.Hamburger:before,
+.Hamburger:after {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.Hamburger:before {
+  top: 10px;
+}
+
+.Hamburger:after {
+  top: -10px;
+}
+
+.Hamburger__IsOpen {
+  background-color: var(--white);
+  width: 30px;
+  display: block;
+  height: 2px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: "inherit";
+  background: transparent !important;
+}
+
+.Hamburger__IsOpen:before {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+.Hamburger__IsOpen:after {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+.Hamburger__IsOpen:before,
+.Hamburger__IsOpen:after {
+  top: 0;
+}
+
+.Navbox {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  transition: left 0.3s;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.Navbox__isMobile {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  transition: left 0.3s;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    justify-content: flex-start;
+    padding-top: 10vh;
+    background-color: var(--primary-color);
+    top: 8vh;
+    left: 0;
+    height: 92vh;
+    background: linear-gradient(
+      190deg,
+      var(--primary-color) 70%,
+      var(--white) 70%
+    );
+  }
+}
+
+.NavItem {
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 1vw;
+  transition: all 200ms ease-in;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+
+  :after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: var(--textLink);
+    height: 1px;
+    transition: all 0.4s ease-in;
+  }
+
+  :hover {
+    color: var(--textLink);
+    ::after {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 3% 0;
+    font-size: 13px;
+    z-index: 6;
+  }
+}
+
+.LogoWrap {
+  margin: auto 0;
+  width: 80px;
+  height: 60px;
+
+  @media (max-width: 768px) and (orientation: landscape) {
+    min-width: 24px;
+  }
+}
+
+.SocialWrap {
+  margin-bottom: 0.5rem;
+  a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--white);
+    transition: color 0.4s;
+
+    :hover {
+      color: var(--textLink);
+    }
+  }
+}

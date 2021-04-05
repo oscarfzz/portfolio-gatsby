@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WP_GRAPH_API_URL,
+        url: "https://wpadm.oscarfdz.com/graphql",
       },
     },
 
@@ -62,6 +62,7 @@ module.exports = {
      */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
@@ -79,7 +80,6 @@ module.exports = {
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
-
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline

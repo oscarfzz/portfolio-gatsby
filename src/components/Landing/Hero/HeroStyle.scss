@@ -1,0 +1,68 @@
+@import "../../../styles/GlobalStyle.scss";
+
+.Hero {
+  grid-template-columns: auto auto auto;
+  .title {
+    grid-area: title;
+
+    h1 {
+      color: #fff;
+      margin: 0;
+      font-family: font-file-82132;
+      font-weight: 400;
+      font-size: 6em;
+      line-height: 8.7rem;
+      position: relative;
+    }
+  }
+
+  .description {
+    grid-area: description;
+
+    .line {
+      font-size: var(--fz-lg);
+      font-family: font-file-82132;
+      width: 100%;
+    }
+
+    @media (max-width: 660px) {
+      .line {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    @media (min-width: 410px) {
+      .line {
+        animation: typewriter 3s steps(36), cursor 650ms steps(36) infinite;
+        font-size: var(--fz-lg);
+        font-family: font-file-82132;
+        border-right: solid 2px #f05365;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 32ch;
+      }
+    }
+  }
+
+  .actions {
+    grid-area: actions;
+  }
+
+  @extend %grid;
+  grid-template-areas:
+    templateRow((12, "title", 1, "."))
+    templateRow((12, "description", 1, "."))
+    templateRow((12, "actions", 1, "."));
+  color: var(--white);
+  padding: 4% 0 4% 0;
+
+  @media (min-width: 768px) {
+    background-position: center;
+  }
+}
+
+.Hero-animation {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

@@ -1,6 +1,8 @@
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 
+import "./TitleStyle.scss"
+
 const Title = props => {
   const title = Array.from(props.name)
   const addAnimation = e => {

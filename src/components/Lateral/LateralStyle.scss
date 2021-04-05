@@ -1,0 +1,107 @@
+@import "../../styles/GlobalStyle.scss";
+
+svg {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.left {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+}
+
+@media (max-width: 1080px) {
+  .left {
+    left: 20px;
+    right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .left {
+    display: none;
+  }
+}
+.social__line {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.social__line::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: var(--red);
+}
+.social__line li:last-of-type {
+  margin-bottom: 20px;
+}
+.social__line li a {
+  padding: 10px;
+}
+.social__line li a:hover,
+.social__line li a:focus {
+  transform: translateY(-3px);
+}
+.social__line li a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.right {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  right: 40px;
+  z-index: 10;
+}
+@media (max-width: 1080px) {
+  .right {
+    left: auto;
+    right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .right {
+    display: none;
+  }
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+.email::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: var(--red);
+}
+.email a {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+.email a:hover,
+.email a:focus {
+  transform: translateY(-3px);
+}
