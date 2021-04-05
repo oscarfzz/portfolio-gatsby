@@ -19,6 +19,13 @@ const Portfolio = () => {
           <Title name={"SEO Portfolio"} TitleType={"h2"} />
           <ProgressBar />
           <SEOProjects />
+          <div className="disclaimer">
+            <p>
+              ⚠️Warning!: I don't add more information about the projects
+              because I don't have permission and it's not something I like to
+              do.
+            </p>
+          </div>
           <Button
             content={"Back"}
             click={() => {
