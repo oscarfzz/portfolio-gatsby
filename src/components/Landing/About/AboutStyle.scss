@@ -1,0 +1,38 @@
+@import "../../../styles/GlobalStyle.scss";
+
+.About {
+  grid-template-columns: auto auto auto;
+  .description {
+    grid-area: description;
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .editor {
+    grid-area: editor;
+    margin-bottom: 25px;
+    color: var(--white);
+
+    @media (min-width: 1000px) {
+      .tagcloud {
+        height: 750px !important;
+      }
+    }
+  }
+
+  @extend %grid;
+
+  grid-template-areas:
+    templateRow((12, "description", 1, "."))
+    templateRow((12, "editor", 1, "."));
+
+  @media (min-width: 1000px) {
+    grid-template-areas: templateRow((8, "description", 3, "editor", 1, "."));
+  }
+
+  padding-bottom: 60px;
+}

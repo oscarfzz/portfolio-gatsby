@@ -1,4 +1,4 @@
-@import "./GlobalStyle.scss";
+@import "../../styles/GlobalStyle.scss";
 
 nav {
   height: 10vh;
@@ -9,7 +9,6 @@ nav {
   z-index: 2;
   padding: 0 3vw;
   align-self: center;
-  margin-bottom: 2.5rem;
   max-width: 1400px;
 
   @media (max-width: 768px) {
@@ -190,7 +189,6 @@ nav {
   margin: auto 0;
   width: 80px;
   height: 60px;
-  background-color: var(--primary-color);
 
   @media (max-width: 768px) and (orientation: landscape) {
     min-width: 24px;

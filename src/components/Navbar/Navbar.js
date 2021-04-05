@@ -3,10 +3,10 @@ import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 import Social from "./social"
 
-import "../../styles/NavbarStyle.scss"
+import "./NavbarStyle.scss"
 
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [navbaropen, setNavbarOpen] = useState(false)
 
   return (
     <header>
@@ -14,10 +14,10 @@ const Navbar = () => {
         <Logo />
         <div
           className="Toggle"
-          navbarOpen={navbarOpen}
-          onClick={() => setNavbarOpen(!navbarOpen)}
+          navbaropen={navbaropen.toString()}
+          onClick={() => setNavbarOpen(!navbaropen)}
         >
-          {navbarOpen ? (
+          {navbaropen ? (
             <div className="Menu__Mobile">
               <div className="Hamburger__IsOpen" />
             </div>
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        {navbarOpen ? (
+        {navbaropen ? (
           <div className="Navbox__isMobile">
             <NavbarLinks />
             <Social />
