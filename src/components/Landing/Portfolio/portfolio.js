@@ -59,13 +59,13 @@ const Portfolio = () => {
                 <ul>
                   <li>
                     <div
-                      className="magic-wall_item"
+                      className="magic-wall_item lazyloaded"
                       style={{
                         backgroundImage:
                           "url(" + "https://svgshare.com/i/VpN.svg" + ")",
                       }}
                     >
-                      <div className="hover-content"></div>
+                      <div className="hover-content vcenter"></div>
                       <span
                         className="colorbox"
                         onClick={() => {

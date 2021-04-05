@@ -3,6 +3,7 @@
 .Hero {
   grid-template-columns: auto auto auto;
   .title {
+    margin-top: 3rem;
     grid-area: title;
 
     h1 {
@@ -14,10 +15,24 @@
       line-height: 8.7rem;
       position: relative;
     }
+
+    @media (max-width: 450px) {
+      h1 {
+        font-size: 4.6em;
+        line-height: 5.7rem;
+      }
+    }
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 4.3em;
+        line-height: 5.7rem;
+      }
+    }
   }
 
   .description {
     grid-area: description;
+    margin-top: 1rem;
 
     .line {
       font-size: var(--fz-lg);
@@ -45,6 +60,7 @@
   }
 
   .actions {
+    margin-top: 2rem;
     grid-area: actions;
   }
 

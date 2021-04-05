@@ -78,7 +78,8 @@ p {
   width: 100%;
   height: 100%;
   z-index: 9;
-  background: url(https://svgshare.com/i/Vo0.svg) no-repeat center;
+  background: url(../../../assets/view-projects.svg) no-repeat center;
+  cursor: pointer;
   opacity: 0;
   -webkit-transition: all 0.15s ease-out;
   -o-transition: all 0.15s ease-out;
@@ -111,6 +112,7 @@ p {
   grid-template-columns: auto auto auto;
   padding: 2rem;
   .SEO {
+    margin-bottom: 2rem;
     grid-area: SEO;
     h2 {
       font-size: 3rem;
@@ -222,7 +224,8 @@ p {
     width: 100%;
     height: 100%;
     z-index: 9;
-    background: url(https://svgshare.com/i/Voa.svg) no-repeat center;
+    background: url(../../../assets/view-more-about-projects.svg) no-repeat
+      center;
     opacity: 0;
     -webkit-transition: all 0.15s ease-out;
     -o-transition: all 0.15s ease-out;
