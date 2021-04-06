@@ -94,6 +94,16 @@ p {
   -ms-transform: scale(0.6);
   transform: scale(0.6);
 }
+
+@media screen and (max-width: 900px) {
+  .Portfolio__Hover ul li span.colorbox {
+    opacity: 1;
+    -webkit-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+}
+
 @media screen and (max-width: 900px) {
   .Portfolio__Hover ul li {
     width: 100%;
@@ -247,6 +257,16 @@ p {
     -ms-transform: scale(0.6);
     transform: scale(0.6);
   }
+
+  @media screen and (max-width: 900px) {
+    .Portfolio__Hover ul li span.colorbox {
+      opacity: 1;
+      -webkit-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+      transform: scale(0.6);
+    }
+  }
+
   @media screen and (max-width: 900px) {
     .Portfolio__Hover ul li {
       width: 100%;

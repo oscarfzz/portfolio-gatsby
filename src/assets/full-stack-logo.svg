@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440pt" height="809.999993pt" viewBox="0 0 1440 809.999993" version="1.2">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 91.578125 -237.5 L 91.578125 -28.875 L 196.078125 -28.875 L 196.078125 -237.5 Z M 60.796875 0 L 60.796875 -266.375 L 226.484375 -266.375 L 226.484375 0 Z M 60.796875 0 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 105.640625 -133 L 183.15625 -49.015625 L 101.84375 -49.015625 L 24.3125 -133 L 101.84375 -216.984375 L 183.15625 -216.984375 Z M 105.640625 -133 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-2">
+<path style="stroke:none;" d="M 3.796875 71.0625 L 105.640625 -361 L 168.34375 -361 L 66.5 71.0625 Z M 3.796875 71.0625 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-3">
+<path style="stroke:none;" d="M 24.3125 -49.015625 L 101.84375 -133 L 24.3125 -216.984375 L 105.640625 -216.984375 L 183.15625 -133 L 105.640625 -49.015625 Z M 24.3125 -49.015625 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface1">
+<rect x="0" y="0" width="1440" height="809.999993" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<rect x="0" y="0" width="1440" height="809.999993" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<rect x="0" y="0" width="1440" height="809.999993" style="fill:rgb(9.799194%,9.799194%,9.799194%);fill-opacity:1;stroke:none;"/>
+<g style="fill:rgb(98.039246%,81.568909%,17.248535%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="422.460921" y="517.124994"/>
+</g>
+<g style="fill:rgb(98.039246%,81.568909%,17.248535%);fill-opacity:1;">
+  <use xlink:href="#glyph0-2" x="632.597785" y="517.124994"/>
+</g>
+<g style="fill:rgb(98.039246%,81.568909%,17.248535%);fill-opacity:1;">
+  <use xlink:href="#glyph0-3" x="804.735182" y="517.124994"/>
+</g>
+</g>
+</svg>

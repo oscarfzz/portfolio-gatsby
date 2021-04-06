@@ -4,6 +4,8 @@ import Title from "../../Title/title"
 import ProgressBar from "../../Progress/progress"
 import Button from "../../Button/button"
 import SEOProjects from "./views/seoprojects"
+import SEOsvg from "../../../assets/seo-logo.svg"
+import FullStackSVG from "../../../assets/full-stack-logo.svg"
 
 import "./Portfolio.scss"
 
@@ -68,8 +70,7 @@ const Portfolio = () => {
                     <div
                       className="magic-wall_item lazyloaded"
                       style={{
-                        backgroundImage:
-                          "url(" + "https://svgshare.com/i/VpN.svg" + ")",
+                        backgroundImage: "url(" + `${SEOsvg.toString()}` + ")",
                       }}
                     >
                       <div className="hover-content vcenter"></div>
@@ -93,7 +94,7 @@ const Portfolio = () => {
                       className="magic-wall_item"
                       style={{
                         backgroundImage:
-                          "url(" + "https://svgshare.com/i/Vor.svg" + ")",
+                          "url(" + `${FullStackSVG.toString()}` + ")",
                       }}
                     >
                       <div className="hover-content"></div>
