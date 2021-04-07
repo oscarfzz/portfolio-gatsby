@@ -7,7 +7,19 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: "https://wpadm.oscarfdz.com/graphql",
+        url: process.env.WP_GRAPH_URL,
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GitHub",
+        fieldName: "github",
+        url: process.env.GITHUB_URL_API,
+        headers: {
+          Authorization: `bearer ${process.env.GITHUB_GATSBY_PORTFOLIO_TOKEN}`,
+        },
+        fetchOptions: {},
       },
     },
     {

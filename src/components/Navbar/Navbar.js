@@ -16,6 +16,7 @@ const Navbar = () => {
           className="Toggle"
           navbaropen={navbaropen.toString()}
           onClick={() => setNavbarOpen(!navbaropen)}
+          onKeyDown={() => setNavbarOpen(!navbaropen)}
         >
           {navbaropen ? (
             <div className="Menu__Mobile">

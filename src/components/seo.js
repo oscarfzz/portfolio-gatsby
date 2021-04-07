@@ -1,10 +1,3 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
@@ -21,7 +14,6 @@ const SEO = ({ description, lang, meta, title }) => {
           }
         }
 
-        # if there's more than one user this would need to be filtered to the main user
         wpUser {
           twitter: name
         }

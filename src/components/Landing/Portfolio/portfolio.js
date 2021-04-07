@@ -4,6 +4,7 @@ import Title from "../../Title/title"
 import ProgressBar from "../../Progress/progress"
 import Button from "../../Button/button"
 import SEOProjects from "./views/seoprojects"
+import FullStackProjects from "./views/fullstackprojects"
 import SEOsvg from "../../../assets/seo-logo.svg"
 import FullStackSVG from "../../../assets/full-stack-logo.svg"
 
@@ -40,18 +41,25 @@ const Portfolio = () => {
     )
   }
 
-  const FullStackProjects = () => {
+  const StackProjects = () => {
     return (
       <>
-        <Title name={"Full Stack Portfolio"} TitleType={"h2"} />
-        <ProgressBar />
-        <Button
-          content={"Back"}
-          click={() => {
-            setShowSelect(true)
-            setShowFullStack(false)
-          }}
-        />
+        <div className="github__container">
+          <FullStackProjects />
+          <div className="disclaimer">
+            <p>
+              ⚠️Warning!: This section is in beta version as some works are
+              missing such as developments in PHP, AMP, Angular, etc...
+            </p>
+          </div>
+          <Button
+            content={"Back"}
+            click={() => {
+              setShowSelect(true)
+              setShowFullStack(false)
+            }}
+          />
+        </div>
       </>
     )
   }
@@ -59,7 +67,7 @@ const Portfolio = () => {
   return (
     <>
       {showSelect ? (
-        <div className="Container">
+        <div className="Container__Content" id="portfolio">
           <Title name={"Portfolio"} TitleType={"h2"} />
           <ProgressBar />
           <div className="Portfolio ml-auto mr-auto">
@@ -102,7 +110,7 @@ const Portfolio = () => {
                         className="colorbox"
                         onClick={() => {
                           setShowSelect(false)
-                          setShowSEO(true)
+                          setShowFullStack(true)
                         }}
                       ></span>
                     </div>
@@ -115,7 +123,7 @@ const Portfolio = () => {
       ) : showSEO ? (
         SEOprojects()
       ) : (
-        FullStackProjects()
+        StackProjects()
       )}
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React from "react"
 import Hero from "../components/Landing/Hero/hero"
 import About from "../components/Landing/About/about"
 import Portfolio from "../components/Landing/Portfolio/portfolio"

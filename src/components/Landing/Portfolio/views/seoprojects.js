@@ -58,6 +58,9 @@ const SEOProjects = () => {
                   onClick={() => {
                     setIsOpen(true)
                   }}
+                  onKeyDown={() => {
+                    setIsOpen(true)
+                  }}
                 ></span>
               </div>
             </li>

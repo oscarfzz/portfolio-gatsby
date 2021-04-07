@@ -6,7 +6,7 @@ import "./ButtonStyle.scss"
 
 const Button = props => {
   return (
-    <div onClick={props.click}>
+    <div onClick={props.click} onKeyDown={props.click}>
       <Link to={props.url} className="flat-button">
         <span className="bg"></span> <span className="base"></span>
         <span className="text">{props.content}</span>
