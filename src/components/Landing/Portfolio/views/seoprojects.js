@@ -1,6 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+import Lightbox from "react-image-lightbox"
+import "react-image-lightbox/style.css"
+
+import One from "../../../../assets/seo/one.svg"
+import Two from "../../../../assets/seo/two.svg"
+import Three from "../../../../assets/seo/three.svg"
+import Four from "../../../../assets/seo/four.svg"
+import Five from "../../../../assets/seo/five.svg"
 
 const responsive = {
   superLargeDesktop: {
@@ -21,29 +29,70 @@ const responsive = {
   },
 }
 
-const Projects = []
-
 const SEOProjects = () => {
-  return (
-    <>
-      <Carousel responsive={responsive} className="mr-auto ml-auto">
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
+  const getImages = [
+    `http://localhost:8000/${One.toString()}`,
+    `http://localhost:8000/${Two.toString()}`,
+    `http://localhost:8000/${Three.toString()}`,
+    `http://localhost:8000/${Four.toString()}`,
+    `http://localhost:8000/${Five.toString()}`,
+  ]
+
+  const renderImages = () => {
+    return getImages.map((post, indx) => {
+      return (
         <div className="Portfolio__Hover">
           <ul>
             <li>
               <div
                 className="magic-wall_item"
                 style={{
-                  backgroundImage:
-                    "url(" + "https://svgshare.com/i/Vpa.svg" + ")",
+                  backgroundImage: "url(" + post + ")",
                 }}
               >
                 <div className="hover-content"></div>
-                <span className="colorbox"></span>
+                <span
+                  className="colorbox"
+                  onClick={() => {
+                    setIsOpen(true)
+                  }}
+                  onKeyDown={() => {
+                    setIsOpen(true)
+                  }}
+                ></span>
               </div>
             </li>
           </ul>
         </div>
+      )
+    })
+  }
+
+  return (
+    <>
+      <Carousel responsive={responsive} className="mr-auto ml-auto">
+        {renderImages()}
       </Carousel>
+      {isOpen && (
+        <Lightbox
+          mainSrc={getImages[photoIndex]}
+          nextSrc={getImages[(photoIndex + 1) % getImages.length]}
+          prevSrc={
+            getImages[(photoIndex + getImages.length - 1) % getImages.length]
+          }
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + getImages.length - 1) % getImages.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % getImages.length)
+          }
+        />
+      )}
     </>
   )
 }

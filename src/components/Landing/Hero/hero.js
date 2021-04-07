@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from "react"
+import React from "react"
 
 import Title from "../../Title/title"
 import Button from "../../Button/button"
 import TypeWriter from "../../Typewriter/typewriter"
-import Layout from "../../Lateral/lateral"
 
 import DrifterStars from "@devil7softwares/react-drifter-stars"
 import "@devil7softwares/react-drifter-stars/dist/styles.css"

@@ -1,1 +1,1 @@
-{"data":{"allWpMenuItem":{"edges":[{"node":{"label":"Inicio","path":"/"}},{"node":{"label":"Hello worlxd!","path":"/hello-world/"}},{"node":{"label":"Sample Page","path":"/sample-page/"}}]}}}
+{"data":{"allWpMenuItem":{"edges":[{"node":{"label":"About","path":"/#about"}},{"node":{"label":"Portfolio","path":"/#portfolio"}},{"node":{"label":"Contact","path":"/#contact"}}]}}}

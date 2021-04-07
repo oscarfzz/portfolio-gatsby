@@ -70,6 +70,7 @@ body {
   background-color: var(--primary-color) !important;
   color: var(--white);
   font-family: font-file-82132;
+  outline: none;
 }
 
 ::selection {
@@ -99,6 +100,7 @@ a {
 a:hover,
 a:focus {
   color: var(--textLink);
+  text-decoration: none;
 }
 a.inline-link {
   display: inline-block;
@@ -126,6 +128,7 @@ a.inline-link::after {
   width: 0px;
   height: 1px;
   position: relative;
+  text-decoration: none;
   bottom: 0.37em;
   background-color: var(--textLink);
   transition: var(--transition);
@@ -142,11 +145,11 @@ p {
 p:last-child,
 p:last-of-type {
   margin: 0px;
+  text-decoration: none;
 }
 p > a {
   display: inline-block;
   text-decoration: none;
-  text-decoration-skip-ink: auto;
   position: relative;
   transition: var(--transition);
   cursor: pointer;
@@ -157,11 +160,13 @@ p > a:focus,
 p > a:active {
   color: var(--textLink);
   outline: 0px;
+  text-decoration: none;
 }
 p > a:hover::after,
 p > a:focus::after,
 p > a:active::after {
   width: 100%;
+  text-decoration: none;
 }
 p > a::after {
   content: "";
@@ -169,6 +174,7 @@ p > a::after {
   width: 0px;
   height: 1px;
   position: relative;
+  text-decoration: none;
   bottom: 0.37em;
   background-color: var(--textLink);
   transition: var(--transition);
@@ -190,6 +196,21 @@ a:hover {
 .Container {
   max-width: 1280px;
   min-height: calc(95vh - 100px);
+  margin: 0 auto;
+  width: 90%;
+
+  @media (min-width: 601px) {
+    width: 90%;
+  }
+
+  @media (min-width: 993px) {
+    width: 80%;
+  }
+}
+
+.Container__Content {
+  max-width: 1280px;
+  min-height: calc(60vh - 100px);
   margin: 0 auto;
   width: 90%;
 

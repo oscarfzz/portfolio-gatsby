@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 
 import Title from "../../Title/title"
 import ProgressBar from "../../Progress/progress"
@@ -74,7 +74,7 @@ const About = () => {
   }, [showCloud, width])
 
   useEffect(() => {
-    if (radius != false && changeTag === 2) {
+    if (radius !== false && changeTag === 2) {
       TagCloud(container, texts, options)
       setChangeTag(1)
     }
@@ -83,9 +83,9 @@ const About = () => {
   return (
     <>
       {showCloud ? (
-        <div className="Container">
+        <div className="Container__Content">
           <div className="About">
-            <div className="description">
+            <div className="description" id="about">
               <Title name={"About Me"} TitleType={"h2"} />
               <ProgressBar />
               <p>
