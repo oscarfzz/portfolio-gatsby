@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
+  console.log(location)
 
   return (
     <Layout location={location} title={siteTitle}>
