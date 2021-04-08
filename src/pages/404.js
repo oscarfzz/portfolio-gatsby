@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Button from "../components/Button/button"
 
 import "./404Style.scss"
 
@@ -14,6 +15,7 @@ const NotFoundPage = ({ data, location }) => {
       <SEO title="404: Not Found" />
       <div className="wrapper">
         <div title="404">404</div>
+        <Button url={"/"} content={"Go Home"} />
       </div>
     </Layout>
   )
