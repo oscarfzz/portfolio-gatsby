@@ -1,80 +1,116 @@
 @import "../styles/GlobalStyle.scss";
 
-.wrapper {
-  display: flex;
+@keyframes noise {
+  0% {
+    background-position-y: 0px;
+  }
+  100% {
+    background-position-y: -420px;
+  }
+}
+
+.glitch-wrapper {
+  padding-top: 20rem;
   width: 100vw;
+  margin: 0px;
+  background: var(--primary-color);
   height: 100vh;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background: #131313;
-  color: #fff;
-  font-size: 96px;
-  font-family: var(--font-mono);
-  letter-spacing: -7px;
-}
+  text-align: center;
+  animation: glitch 4s linear infinite;
+  margin-bottom: 110px;
 
-.wrapper div {
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0) skew(0deg);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0) skew(5deg);
+  div:nth-child(2) {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
   }
 }
 
-.wrapper div:before,
-.wrapper div:after {
-  content: attr(title);
+.glitch-text::before {
+  content: "ERROR 404";
+  color: black;
+  text-shadow: 0px 0px 5px 10px black !important;
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7x);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
+  display: block;
   position: absolute;
-  left: 0;
+  z-index: -1;
+  font-size: 132px;
+  left: 0px;
+  right: 0px;
+  margin-top: -30px;
+  opacity: 0.5;
 }
 
-.wrapper div:before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+.glitch-text {
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+  margin: 0 auto;
+  text-shadow: 0px 0px 3px white;
+  animation: glitch 7s infinite;
+  cursor: pointer;
+  font-size: 52px;
+  color: white;
 }
 
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(2px, -2px);
+.paused {
+  animation-play-state: paused;
+}
+
+/* JUST RANDOM VALUES HERE! */
+@keyframes glitch {
+  3% {
+    text-shadow: 7px 7px 0px red;
   }
-  4%,
-  60% {
-    transform: translate(-2px, 2px);
+  6% {
+    text-shadow: -9px 4px 0px blue;
+    transform: translate(4px, -10px) skewX(3240deg);
+  }
+  7% {
+    text-shadow: 3px -4px 0px green;
+  }
+  9% {
+    text-shadow: 0px 0px 3px white;
+    transform: translate(0px, 0px) skewX(0deg);
+  }
+  2%,
+  54% {
+    transform: translateX(0px) skew(0deg);
+  }
+  55% {
+    transform: translate(-2px, 6px) skew(-5530deg);
+  }
+  56% {
+    text-shadow: 0px 0px 3px white;
+    transform: translate(0px, 0px) skew(0deg);
+  }
+  57% {
+    text-shadow: 7px 7px 0px red;
+    transform: translate(4px, -10px) skew(-70deg);
+  }
+  58% {
+    text-shadow: 0px 0px 3px white;
+    transform: translate(0px, 0px) skew(0deg);
   }
   62% {
-    transform: translate(13px, -1px) skew(-13deg);
+    text-shadow: 3px -4px 0px green;
+    transform: translate(0px, 20px) skew(0deg);
   }
-}
-
-.wrapper div:after {
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-  2%,
+  63% {
+    text-shadow: 0px 0px 3px white;
+    transform: translate(4px, -2px) skew(0deg);
+  }
   64% {
-    transform: translate(-2px, 0);
+    transform: translate(1px, 3px) skew(-230deg);
   }
-  4%,
-  60% {
-    transform: translate(-2px, 0);
+  65% {
+    transform: translate(-7px, 2px) skew(120deg);
   }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
+  66% {
+    transform: translate(0px, 0px) skew(0deg);
   }
 }

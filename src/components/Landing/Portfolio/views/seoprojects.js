@@ -33,17 +33,17 @@ const SEOProjects = () => {
   const [photoIndex, setPhotoIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const getImages = [
-    `http://localhost:8000/${One.toString()}`,
-    `http://localhost:8000/${Two.toString()}`,
-    `http://localhost:8000/${Three.toString()}`,
-    `http://localhost:8000/${Four.toString()}`,
-    `http://localhost:8000/${Five.toString()}`,
+    `${process.env.WEBSITE_URL.concat(One.toString())}`,
+    `${process.env.WEBSITE_URL.concat(Two.toString())}`,
+    `${process.env.WEBSITE_URL.concat(Three.toString())}`,
+    `${process.env.WEBSITE_URL.concat(Four.toString())}`,
+    `${process.env.WEBSITE_URL.concat(Five.toString())}`,
   ]
 
   const renderImages = () => {
     return getImages.map((post, indx) => {
       return (
-        <div className="Portfolio__Hover">
+        <div key={indx} className="Portfolio__Hover">
           <ul>
             <li>
               <div
