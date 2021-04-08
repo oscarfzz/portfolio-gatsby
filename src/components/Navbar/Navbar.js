@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 import Social from "./social"
@@ -7,6 +7,14 @@ import "./NavbarStyle.scss"
 
 const Navbar = () => {
   const [navbaropen, setNavbarOpen] = useState(false)
+
+  useEffect(() => {
+    if (navbaropen) {
+      document.body.classList.add("navBarMobile")
+    } else {
+      document.body.classList.remove("navBarMobile")
+    }
+  }, [navbaropen])
 
   return (
     <header>

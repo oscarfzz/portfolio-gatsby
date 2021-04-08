@@ -28,7 +28,7 @@ const Hero = () => {
               <TypeWriter content={"Full Stack Developer & Technical SEO"} />
             </div>
             <div className="actions">
-              <Button url={"/contact"} content={"Get In Touch"} />
+              <Button url={"/#contact"} content={"Get In Touch"} />
             </div>
           </div>
         </div>

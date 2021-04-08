@@ -3,15 +3,20 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Button from "../components/Button/button"
+
+import "./404Style.scss"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} noHeader noFooter>
       <SEO title="404: Not Found" />
-      <h1>404: Not Found xDDD</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <div class="glitch-wrapper">
+        <div class="glitch-text">ERROR 404: Not found</div>
+        <Button url={"/"} content={"Go Home"} />
+      </div>
     </Layout>
   )
 }

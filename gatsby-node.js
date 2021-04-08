@@ -1,39 +1,18 @@
 const path = require(`path`)
-const chunk = require(`lodash/chunk`)
+const glob = require(`glob`)
 
-exports.createPages = async gatsbyUtilities => {
-  const posts = await getPosts(gatsbyUtilities)
-  if (!posts.length) {
-    return
-  }
-  await createIndividualBlogPostPages({ posts, gatsbyUtilities })
+const createBlog = require(`./create/createBlog`)
+const createContentTypes = require(`./create/createContentTypes`)
+const createCategories = require(`./create/createCategories`)
+const createAuthors = require(`./create/createAuthors`)
 
-  await createBlogPostArchive({ posts, gatsbyUtilities })
+const getTemplates = () => {
+  const sitePath = path.resolve(`./`)
+  return glob.sync(`./src/templates/**/*.js`, { cwd: sitePath })
 }
 
-const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
-  Promise.all(
-    posts.map(({ previous, post, next }) =>
-      gatsbyUtilities.actions.createPage({
-        path: post.uri,
-
-        component: path.resolve(`./src/templates/blog-post.js`),
-
-        context: {
-          id: post.id,
-
-          previousPostId: previous ? previous.id : null,
-          nextPostId: next ? next.id : null,
-        },
-      })
-    )
-  )
-
-/**
- * This function creates all the individual blog pages in this site
- */
-async function createBlogPostArchive({ posts, gatsbyUtilities }) {
-  const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
+exports.createPages = async props => {
+  const { data: wpSettings } = await props.graphql(/* GraphQL */ `
     {
       wp {
         readingSettings {
@@ -43,71 +22,46 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
     }
   `)
 
-  const { postsPerPage } = graphqlResult.data.wp.readingSettings
+  const perPage = wpSettings.wp.readingSettings.postsPerPage || 10
+  const blogURI = "/"
+  const templates = getTemplates()
 
-  const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
-  const totalPages = postsChunkedIntoArchivePages.length
-
-  return Promise.all(
-    postsChunkedIntoArchivePages.map(async (_posts, index) => {
-      const pageNumber = index + 1
-
-      const getPagePath = page => {
-        if (page > 0 && page <= totalPages) {
-          return page === 1 ? `/` : `/blog/${page}`
-        }
-
-        return null
-      }
-
-      await gatsbyUtilities.actions.createPage({
-        path: getPagePath(pageNumber),
-
-        component: path.resolve(`./src/templates/blog-post-archive.js`),
-
-        context: {
-          offset: index * postsPerPage,
-
-          postsPerPage,
-
-          nextPagePath: getPagePath(pageNumber + 1),
-          previousPagePath: getPagePath(pageNumber - 1),
-        },
-      })
-    })
-  )
+  await createContentTypes(props, { templates })
+  await createBlog(props, { perPage, blogURI })
+  await createCategories(props, { perPage })
+  await createAuthors(props, { perPage })
 }
 
-async function getPosts({ graphql, reporter }) {
-  const graphqlResult = await graphql(/* GraphQL */ `
-    query WpPosts {
-      # Query all WordPress blog posts sorted by date
-      allWpPost(sort: { fields: [date], order: DESC }) {
-        edges {
-          previous {
-            id
-          }
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
-          post: node {
-            id
-            uri
-          }
+// We do this, because the Avatar doesn't get handled as a File from the gatsby-source plugin yet. This might change in the future.
+exports.createResolvers = async ({
+  actions,
+  cache,
+  createNodeId,
+  createResolvers,
+  store,
+  reporter,
+}) => {
+  const { createNode } = actions
 
-          next {
-            id
-          }
-        }
-      }
-    }
-  `)
+  await createResolvers({
+    WpAvatar: {
+      imageFile: {
+        type: "File",
+        async resolve(source) {
+          let sourceUrl = source.url
 
-  if (graphqlResult.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      graphqlResult.errors
-    )
-    return
-  }
-
-  return graphqlResult.data.allWpPost.edges
+          return await createRemoteFileNode({
+            url: encodeURI(sourceUrl),
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
+    },
+  })
 }
