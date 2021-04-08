@@ -1,5 +1,9 @@
 @import "../../styles/GlobalStyle.scss";
 
+.navBarMobile {
+  overflow-y: hidden;
+}
+
 nav {
   height: 10vh;
   display: flex;
