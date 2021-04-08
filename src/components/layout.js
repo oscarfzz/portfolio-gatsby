@@ -5,10 +5,10 @@ import Landing from "../pages/landing"
 
 import "../styles/GlobalStyle.scss"
 
-const Layout = ({ isHomePage, children }) => {
+const Layout = ({ noHeader, noFooter, isHomePage, children }) => {
   return (
     <>
-      <Navbar />
+      {noHeader ? null : <Navbar />}
       {isHomePage ? <Landing /> : children}
     </>
   )
