@@ -5,11 +5,11 @@ import Landing from "../pages/landing"
 
 import "../styles/GlobalStyle.scss"
 
-const Layout = ({ isHomePage }) => {
+const Layout = ({ isHomePage, children }) => {
   return (
     <>
       <Navbar />
-      {isHomePage ? <Landing /> : null}
+      {isHomePage ? <Landing /> : children}
     </>
   )
 }
