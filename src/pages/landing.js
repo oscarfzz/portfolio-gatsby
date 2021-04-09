@@ -42,6 +42,10 @@ const Landing = ({ data }) => {
         OGimage={
           wpPage.seo.opengraphImage.localFile.childImageSharp.resolutions.src
         }
+        robots={wpPage.seo.metaRobotsNoindex
+          .concat(", ")
+          .concat(wpPage.seo.metaRobotsNofollow)
+          .toUpperCase()}
       />
       <Hero />
       <About />
