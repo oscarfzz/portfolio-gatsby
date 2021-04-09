@@ -13,8 +13,10 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle} noHeader noFooter>
       <SEO title="404: Not Found" />
-      <div class="glitch-wrapper">
-        <div class="glitch-text">ERROR 404: Not found</div>
+      <div className="wrapper_404">
+        <div className="text-anim" title="404">
+          404
+        </div>
         <Button url={"/"} content={"Go Home"} />
       </div>
     </Layout>
