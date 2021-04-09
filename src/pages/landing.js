@@ -39,9 +39,9 @@ const Landing = ({ data }) => {
         title={wpPage.seo.title}
         description={wpPage.seo.metaDesc}
         canonical={wpPage.seo.canonical}
-        OGimage={
+        OGimage={process.env.WEBSITE_URL.concat(
           wpPage.seo.opengraphImage.localFile.childImageSharp.resolutions.src
-        }
+        )}
         robots={wpPage.seo.metaRobotsNoindex
           .concat(", ")
           .concat(wpPage.seo.metaRobotsNofollow)
