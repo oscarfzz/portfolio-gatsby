@@ -53,6 +53,10 @@ const SEO = ({
           content: title,
         },
         {
+          property: `og:url`,
+          content: canonical,
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
