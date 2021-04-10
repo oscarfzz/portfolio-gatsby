@@ -46,6 +46,18 @@
       }
     }
 
+    @media (max-width: 550px) {
+      .line {
+        font-size: 1.3rem !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .line {
+        font-size: 1.2rem !important;
+      }
+    }
+
     @media (min-width: 410px) {
       .line {
         animation: typewriter 3s steps(36), cursor 650ms steps(36) infinite;
